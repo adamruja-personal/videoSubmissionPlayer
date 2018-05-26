@@ -44,10 +44,10 @@
               if (datum.length > 3){
                 var tag = datum.slice(datum.length - 3, datum.length);
                 if (tag !== ('mp4' || 'ogg')){
-                  $('.videosImagesList').prepend(`<img src="./imagesAndVideos/${datum}" alt="titleThing" height="600" width="800">`);
+                  $('.videosImagesList').prepend(`<img src="./${datum}" alt="titleThing" height="600" width="800">`);
                 } else {
                   console.log(datum);
-                  $('.videosImagesList').prepend(`<div><video width="650" height="500" controls><source src="./imagesAndVideos/${datum}" type="video/${tag}"></video></div>`);
+                  $('.videosImagesList').prepend(`<div><video width="650" height="500" controls><source src="./${datum}" type="video/${tag}"></video></div>`);
                 }                  
               }
             });

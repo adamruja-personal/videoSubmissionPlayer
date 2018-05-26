@@ -27,7 +27,7 @@ app.post('/upload', function(req, res) {
     if (err){
       return res.send(err);
     }
-    fs.writeFile(`./imagesAndVideos/${name}`, new Buffer(sampleFile.data, "base 7"), (err) => {
+    fs.writeFile(`./${name}`, new Buffer(sampleFile.data, "base 7"), (err) => {
       if (err) {
         return err; 
       } 
