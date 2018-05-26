@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <title>SomeCompany Video Player</title>
+  </head>
+  <body>
+    <div class="myClass">Welcome to our Video Submission Page</div>
+    <div>
+      Submit a video or image Here.
+      <form ref='uploadForm' 
+      id='uploadForm' 
+      action='http://localhost:8080/upload' 
+      method='post' 
+      encType="multipart/form-data">
+        <input type="file" name="sampleFile" accept="image/*,video/*"/>
+        <input type='submit' value='Upload!' />
+      </form>     
+    </div>
+    <br />
+    <div>
+      Get all Videos Here
+      <!-- <form id="targetOne">
+        <input class=getVideos type="text">
+        <input type="submit" value="Submit"/>
+      </form> -->
+      <button id="getFiles">Get My Files</button>
+      <div class="videosImagesList">
+      </div>
+    </div>
+    <script type="text/javascript">
+      var x = function(){
+        console.log('Hello'); 
+      };
+      $(document).ready(function(){
+        x();
+        $.ajax({
+          type: 'GET', 
+          url: '/getVideos',
+          success: function(data){
+            data = data.split('\n');
+            data.forEach(function(datum){
+              console.log(datum);
+              if (datum.length > 3){
+                var tag = datum.slice(datum.length - 3, datum.length);
+                if (tag !== 'mp4'){
+                  $('.videosImagesList').prepend(`<img src="./imagesAndVideos/${datum}" alt="titleThing" height="600" width="800">`);
+                } else {
+                  console.log(datum);
+                  $('.videosImagesList').prepend(`<div><video width="650" height="500" controls><source src="./imagesAndVideos/${datum}" type="video/mp4"></video></div>`);
+                }                  
+              }
+            });
+          }, 
+          error: function(err){
+            console.log('error', err); 
+          }
+        });
+    
+      });
+   </script>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <title>SomeCompany Video Player</title>
+  </head>
+  <body>
+    <div class="myClass">Welcome to our Video Submission Page</div>
+    <div>
+      Submit a video or image Here.
+      <form>
+        <input type="file" accept="video/*,image/*">
+        <input type="submit"/>
+      </form>
+    </div>
+    <br />
+    <div>
+      Get all Videos Here
+      <button>Get Videos</button>
+      <div class="videosImagesList">
+      </div>
+    </div>
+    <script type="text/javascript">
+      var server = 'http://localhost:8080';
+      $(document).ready(function(){
+        $.ajax(function(req, res){
+          
+        });
+      });
+    </script>
+  </body>
+</html>

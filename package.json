@@ -1,0 +1,31 @@
+{
+  "name": "videosubmissionplayer",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test",
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/css1990x/videoSubmissionPlayer.git"
+  },
+  "author": "cliff sutter",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/css1990x/videoSubmissionPlayer/issues"
+  },
+  "homepage": "https://github.com/css1990x/videoSubmissionPlayer#readme",
+  "description": "",
+  "dependencies": {
+    "bluebird": "^3.5.1",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "express-fileupload": "^0.4.0",
+    "file-system": "^2.2.2",
+    "jquery": "^3.3.1",
+    "jsdom": "^11.11.0",
+    "npm": "^6.0.1",
+    "path": "^0.12.7"
+  }
+}
